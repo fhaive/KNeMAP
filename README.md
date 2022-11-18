@@ -9,11 +9,11 @@ We applied KNeMAP to the Connectivity Map dataset, where the gene expression cha
 
 ## Files
 
-/data/HL60_combined.csv - the pre-processed expression data (FC) of the CMAP HL60 cells, as described in the manuscript
+/data/HL60_small.csv - the pre-processed expression data (FC) of the CMAP HL60 cells, as described in the manuscript. This file only contains 50 drugs, the complete file can be found on Zenodo.
 
-/data/MCF7_combined.csv - the pre-processed expression data (FC) of the CMAP MCF7 cells, as described in the manuscript
+/data/MCF7_small.csv - the pre-processed expression data (FC) of the CMAP MCF7 cells, as described in the manuscript. This file only contains 50 drugs, the complete file can be found on Zenodo.
 
-/data/PC3_combined:csv - the pre-processed expression data (FC) of the CMAP PC3 cells, as described in the manuscript
+/data/PC3_small.csv - the pre-processed expression data (FC) of the CMAP PC3 cells, as described in the manuscript. This file only contains 50 drugs, the complete file can be found on Zenodo.
 
 /data/communities.csv - community assignment of the prior network nodes; the IDs can be mapped to Ensembl IDs via /data/prior_gene_mapping.txt
 
