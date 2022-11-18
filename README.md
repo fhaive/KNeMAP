@@ -10,13 +10,18 @@ We applied KNeMAP to the Connectivity Map dataset, where the gene expression cha
 ## Files
 
 /data/HL60_combined.csv - the pre-processed expression data (FC) of the CMAP HL60 cells, as described in the manuscript
+
 /data/MCF7_combined.csv - the pre-processed expression data (FC) of the CMAP MCF7 cells, as described in the manuscript
+
 /data/PC3_combined:csv - the pre-processed expression data (FC) of the CMAP PC3 cells, as described in the manuscript
+
 /data/communities.csv - community assignment of the prior network nodes; the IDs can be mapped to Ensembl IDs via /data/prior_gene_mapping.txt
+
 /data/prior_graph.csv - edge list of the prior network; the IDs can be mapped to Ensembl IDs via /data/prior_gene_mapping.txt
+
 /data/prior_gene_mapping.txt - JSON where keys are Ensembl_IDs and values are network node IDs
 
-script_for_publication.ipynb - main to map expression data to prior network & generate exposure fingerprint vectors
+main.ipynb - main script to map expression data to prior network & generate exposure fingerprint vectors
 
 /src/mapping_functions.py - functions called in script_for_publication.ipynb
 
@@ -24,9 +29,7 @@ script_for_publication.ipynb - main to map expression data to prior network & ge
 - pandas
 - json
 
-## Authors and acknowledgment
 
-Alisa Pavel
 
 
 
