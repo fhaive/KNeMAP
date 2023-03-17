@@ -3,10 +3,15 @@ import pandas as pd
 
 
 
-#update chemical data with new gene ids
 def update_dataframe_indexes(df, mapping):
     '''
     Updates the index of df with keys of mapping.
+
+    Input
+        df (DataFrame)
+        mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
+    Output
+        df (DataFrame)
     '''
     temp = df.index.tolist()
     new_indx = []
@@ -55,14 +60,15 @@ def select_genes(chemical_genes, top=100, bottom=100, sort_by=None):
     helper function of create_fingerprints()
     
     
+    Input
+        chemical_genes (DataFrame) with single colum, were index is gene names and colum FC for specific chemical
+        top / bottom (int) specifiy x top & bottom affect genes should be selected
+        sort_by (str) is name of column dataFrame is sorted after (chemical name)
     
-    chemical_genes is dataframe with single colum, were index is gene names and colum FC for specific chemical
+    Output
+         df (dataFrame) with selected genes and FC values
     
-    top and bottom specifiy x top & bottom affect genes should be selected
     
-    returns dataframe with selected genes and FC values
-    
-    sort_by is name of column frame is sorted after (chemical name)
     '''
     
     #sort dataframe after column values
