@@ -31,15 +31,18 @@
 
 
 
-#update chemical data with new gene ids
 def update_dataframe_indexes(df, mapping):
     &#39;&#39;&#39;
     Updates the index of df with keys of mapping.
 
     Input
+
         df (DataFrame)
+
         mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
+
     Output
+
         df (DataFrame)
     &#39;&#39;&#39;
     temp = df.index.tolist()
@@ -62,10 +65,13 @@ def remove_unknown_genes(mapping, data_genes):
     Drops genes (row identifiers) from data_genes that are not in mapping
     
     Input:
+
         mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
+
         data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.
         
     Output:
+
         data (dataFrame): only containing genes were data is known about
     &#39;&#39;&#39;
     
@@ -90,11 +96,15 @@ def select_genes(chemical_genes, top=100, bottom=100, sort_by=None):
     
     
     Input
+
         chemical_genes (DataFrame) with single colum, were index is gene names and colum FC for specific chemical
+
         top / bottom (int) specifiy x top &amp; bottom affect genes should be selected
+
         sort_by (str) is name of column dataFrame is sorted after (chemical name)
     
     Output
+
          df (dataFrame) with selected genes and FC values
     
     
@@ -123,6 +133,14 @@ def select_genes(chemical_genes, top=100, bottom=100, sort_by=None):
 def get_partitioning_id(partitioning):
     &#39;&#39;&#39;
     helper function of create_fingerprints()
+
+    Input
+
+        partitioning (dict): communities, as loaded from file
+
+    Output
+
+        l (list)
     &#39;&#39;&#39;
     l = []
     
@@ -139,14 +157,20 @@ def create_fingerprints(partitioning, df, top=100, bottom=100, add=&#34;&#34;):
     &#39;&#39;&#39;
     main mapping function to create exposure fingerprints via network mapping
     
-    Input:
+    Input
+
         partitioning (dict): communities, as loaded from file
+
         df (dataFrame): exsposure data to select genes from. Each column needs to be an exposure, index needs to be same identifiers as partitioning values and individual genes will be ranked by values of each column.
+        
         top (int): # of top ranked genes to be selected for each exposure
+        
         bottom (int): # of bottom ranked genes to be selected for each exposure
+        
         add (str): suffix to be added to column identifiers. This is needed if multiple exposures with same column names are compared
         
-     Output:
+     Output
+
          fingerprint (dict): key is column identifier + suffix and value is fingerprint (list)
     &#39;&#39;&#39;
     fingerprint = {}
@@ -190,10 +214,12 @@ def sort_fingerprint_by_key(fingerprint):
     &#39;&#39;&#39;
     sorts the fingerprints by key so that if multiple data sets are compared, they can be in the same order
     
-    Input:
+    Input
+
         fingerprint (dict): as returned by create_fingerprints()
         
-    Output:
+    Output
+    
         sorted fingerprint (dict): fingerprint sorted by key
     
     &#39;&#39;&#39;
@@ -223,14 +249,20 @@ def sort_fingerprint_by_key(fingerprint):
 </code></dt>
 <dd>
 <div class="desc"><p>main mapping function to create exposure fingerprints via network mapping</p>
-<h2 id="input">Input</h2>
-<p>partitioning (dict): communities, as loaded from file
+<p>Input</p>
+<pre><code>partitioning (dict): communities, as loaded from file
+
 df (dataFrame): exsposure data to select genes from. Each column needs to be an exposure, index needs to be same identifiers as partitioning values and individual genes will be ranked by values of each column.
+
 top (int): # of top ranked genes to be selected for each exposure
+
 bottom (int): # of bottom ranked genes to be selected for each exposure
-add (str): suffix to be added to column identifiers. This is needed if multiple exposures with same column names are compared</p>
-<p>Output:
-fingerprint (dict): key is column identifier + suffix and value is fingerprint (list)</p></div>
+
+add (str): suffix to be added to column identifiers. This is needed if multiple exposures with same column names are compared
+</code></pre>
+<p>Output</p>
+<pre><code> fingerprint (dict): key is column identifier + suffix and value is fingerprint (list)
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -239,14 +271,20 @@ fingerprint (dict): key is column identifier + suffix and value is fingerprint (
     &#39;&#39;&#39;
     main mapping function to create exposure fingerprints via network mapping
     
-    Input:
+    Input
+
         partitioning (dict): communities, as loaded from file
+
         df (dataFrame): exsposure data to select genes from. Each column needs to be an exposure, index needs to be same identifiers as partitioning values and individual genes will be ranked by values of each column.
+        
         top (int): # of top ranked genes to be selected for each exposure
+        
         bottom (int): # of bottom ranked genes to be selected for each exposure
+        
         add (str): suffix to be added to column identifiers. This is needed if multiple exposures with same column names are compared
         
-     Output:
+     Output
+
          fingerprint (dict): key is column identifier + suffix and value is fingerprint (list)
     &#39;&#39;&#39;
     fingerprint = {}
@@ -289,7 +327,13 @@ fingerprint (dict): key is column identifier + suffix and value is fingerprint (
 <span>def <span class="ident">get_partitioning_id</span></span>(<span>partitioning)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>helper function of create_fingerprints()</p></div>
+<div class="desc"><p>helper function of create_fingerprints()</p>
+<p>Input</p>
+<pre><code>partitioning (dict): communities, as loaded from file
+</code></pre>
+<p>Output</p>
+<pre><code>l (list)
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -297,6 +341,14 @@ fingerprint (dict): key is column identifier + suffix and value is fingerprint (
 <pre><code class="python">def get_partitioning_id(partitioning):
     &#39;&#39;&#39;
     helper function of create_fingerprints()
+
+    Input
+
+        partitioning (dict): communities, as loaded from file
+
+    Output
+
+        l (list)
     &#39;&#39;&#39;
     l = []
     
@@ -315,8 +367,8 @@ fingerprint (dict): key is column identifier + suffix and value is fingerprint (
 <dd>
 <div class="desc"><p>Drops genes (row identifiers) from data_genes that are not in mapping</p>
 <h2 id="input">Input</h2>
-<p>mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
-data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.</p>
+<p>mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file</p>
+<p>data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.</p>
 <h2 id="output">Output</h2>
 <p>data (dataFrame): only containing genes were data is known about</p></div>
 <details class="source">
@@ -329,10 +381,13 @@ data_genes (dataFrame): as loaded from file, processed gene expression data. Ind
     Drops genes (row identifiers) from data_genes that are not in mapping
     
     Input:
+
         mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
+
         data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.
         
     Output:
+
         data (dataFrame): only containing genes were data is known about
     &#39;&#39;&#39;
     
@@ -356,12 +411,16 @@ data_genes (dataFrame): as loaded from file, processed gene expression data. Ind
 </code></dt>
 <dd>
 <div class="desc"><p>helper function of create_fingerprints()</p>
-<p>Input
-chemical_genes (DataFrame) with single colum, were index is gene names and colum FC for specific chemical
+<p>Input</p>
+<pre><code>chemical_genes (DataFrame) with single colum, were index is gene names and colum FC for specific chemical
+
 top / bottom (int) specifiy x top &amp; bottom affect genes should be selected
-sort_by (str) is name of column dataFrame is sorted after (chemical name)</p>
-<p>Output
-df (dataFrame) with selected genes and FC values</p></div>
+
+sort_by (str) is name of column dataFrame is sorted after (chemical name)
+</code></pre>
+<p>Output</p>
+<pre><code> df (dataFrame) with selected genes and FC values
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -373,11 +432,15 @@ df (dataFrame) with selected genes and FC values</p></div>
     
     
     Input
+
         chemical_genes (DataFrame) with single colum, were index is gene names and colum FC for specific chemical
+
         top / bottom (int) specifiy x top &amp; bottom affect genes should be selected
+
         sort_by (str) is name of column dataFrame is sorted after (chemical name)
     
     Output
+
          df (dataFrame) with selected genes and FC values
     
     
@@ -408,10 +471,12 @@ df (dataFrame) with selected genes and FC values</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>sorts the fingerprints by key so that if multiple data sets are compared, they can be in the same order</p>
-<h2 id="input">Input</h2>
-<p>fingerprint (dict): as returned by create_fingerprints()</p>
-<h2 id="output">Output</h2>
-<p>sorted fingerprint (dict): fingerprint sorted by key</p></div>
+<p>Input</p>
+<pre><code>fingerprint (dict): as returned by create_fingerprints()
+</code></pre>
+<p>Output</p>
+<pre><code>sorted fingerprint (dict): fingerprint sorted by key
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -420,10 +485,12 @@ df (dataFrame) with selected genes and FC values</p></div>
     &#39;&#39;&#39;
     sorts the fingerprints by key so that if multiple data sets are compared, they can be in the same order
     
-    Input:
+    Input
+
         fingerprint (dict): as returned by create_fingerprints()
         
-    Output:
+    Output
+    
         sorted fingerprint (dict): fingerprint sorted by key
     
     &#39;&#39;&#39;
@@ -446,11 +513,14 @@ df (dataFrame) with selected genes and FC values</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Updates the index of df with keys of mapping.</p>
-<p>Input
-df (DataFrame)
+<p>Input</p>
+<pre><code>df (DataFrame)
+
 mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
-Output
-df (DataFrame)</p></div>
+</code></pre>
+<p>Output</p>
+<pre><code>df (DataFrame)
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -460,9 +530,13 @@ df (DataFrame)</p></div>
     Updates the index of df with keys of mapping.
 
     Input
+
         df (DataFrame)
+
         mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
+
     Output
+
         df (DataFrame)
     &#39;&#39;&#39;
     temp = df.index.tolist()
