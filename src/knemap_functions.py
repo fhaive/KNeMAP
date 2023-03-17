@@ -36,13 +36,13 @@ def remove_unknown_genes(mapping, data_genes):
     '''
     Drops genes (row identifiers) from data_genes that are not in mapping
     
-    Input:
+    Input
 
         mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
 
         data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.
         
-    Output:
+    Output
 
         data (dataFrame): only containing genes were data is known about
     '''
@@ -191,7 +191,7 @@ def sort_fingerprint_by_key(fingerprint):
         fingerprint (dict): as returned by create_fingerprints()
         
     Output
-    
+
         sorted fingerprint (dict): fingerprint sorted by key
     
     '''

@@ -64,13 +64,13 @@ def remove_unknown_genes(mapping, data_genes):
     &#39;&#39;&#39;
     Drops genes (row identifiers) from data_genes that are not in mapping
     
-    Input:
+    Input
 
         mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
 
         data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.
         
-    Output:
+    Output
 
         data (dataFrame): only containing genes were data is known about
     &#39;&#39;&#39;
@@ -219,7 +219,7 @@ def sort_fingerprint_by_key(fingerprint):
         fingerprint (dict): as returned by create_fingerprints()
         
     Output
-    
+
         sorted fingerprint (dict): fingerprint sorted by key
     
     &#39;&#39;&#39;
@@ -366,11 +366,14 @@ add (str): suffix to be added to column identifiers. This is needed if multiple 
 </code></dt>
 <dd>
 <div class="desc"><p>Drops genes (row identifiers) from data_genes that are not in mapping</p>
-<h2 id="input">Input</h2>
-<p>mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file</p>
-<p>data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.</p>
-<h2 id="output">Output</h2>
-<p>data (dataFrame): only containing genes were data is known about</p></div>
+<p>Input</p>
+<pre><code>mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
+
+data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.
+</code></pre>
+<p>Output</p>
+<pre><code>data (dataFrame): only containing genes were data is known about
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -380,13 +383,13 @@ add (str): suffix to be added to column identifiers. This is needed if multiple 
     &#39;&#39;&#39;
     Drops genes (row identifiers) from data_genes that are not in mapping
     
-    Input:
+    Input
 
         mapping (dict): key needs to be same as index identifiers of data_genes, as loaded from file
 
         data_genes (dataFrame): as loaded from file, processed gene expression data. Indices need to be gene identifiers.
         
-    Output:
+    Output
 
         data (dataFrame): only containing genes were data is known about
     &#39;&#39;&#39;
@@ -490,7 +493,7 @@ sort_by (str) is name of column dataFrame is sorted after (chemical name)
         fingerprint (dict): as returned by create_fingerprints()
         
     Output
-    
+
         sorted fingerprint (dict): fingerprint sorted by key
     
     &#39;&#39;&#39;
